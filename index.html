@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>WILLYAM CHAT</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><div class="mark">W</div><div><strong>WILLYAM CHAT</strong><small id="subtitle">Seu assistente inteligente</small></div></div>
+      <button id="themeBtn" class="icon-btn" aria-label="Mudar tema">☼</button>
+    </header>
+
+    <aside class="settings">
+      <label for="language" id="languageLabel">Idioma</label>
+      <select id="language">
+        <option value="auto">🌐 Automático</option>
+        <option value="pt-BR">🇧🇷 Português (Brasil)</option>
+        <option value="pt-PT">🇵🇹 Português (Portugal)</option>
+        <option value="en">🇺🇸 English</option>
+        <option value="es">🇪🇸 Español</option>
+      </select>
+      <span id="languageHint">O app tentará identificar o idioma automaticamente.</span>
+    </aside>
+
+    <section class="welcome" id="welcome">
+      <div class="robot">🤖</div>
+      <h1 id="welcomeTitle">Olá! Eu sou o Willyam Chat.</h1>
+      <p id="welcomeText">Como posso ajudar você hoje?</p>
+    </section>
+
+    <section id="messages" class="messages" aria-live="polite"></section>
+    <form id="chatForm" class="composer">
+      <textarea id="messageInput" rows="1" placeholder="Digite sua mensagem..." aria-label="Mensagem"></textarea>
+      <button type="submit" id="sendBtn">Enviar ➤</button>
+    </form>
+    <footer id="disclaimer">Versão inicial de demonstração. A inteligência artificial ainda precisa ser conectada.</footer>
+  </main>
+  <script src="app.js"></script>
+  <script>if ("serviceWorker" in navigator) { window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {})); }</script>
+</body>
+</html>
